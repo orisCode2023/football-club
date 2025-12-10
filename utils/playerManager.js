@@ -34,19 +34,14 @@ export function removePlayer(id) {
     return removed === -1 ? null : removed
 }
 
-// - Update the player's properties with newData
-// - Return the updated player
 export function updatePlayer(id, newData) {
     const find = findPlayerById(id)
     Object.assign(find, newData)
     return find
 }
-// TODO 4: Write a function to find player by name (partial match)
-// The function should:
-// - Accept name as parameter (string)
-// - Return player whose name includes the search term
-// - Make the search case-insensitive
-// Use: find() and includes() methods
-export const findPlayerByName = (name) => {
 
+export const findPlayerByName = (name) => {
+    const find = players.find((player => player.name.includes(name)))
+    return find
 };
+
