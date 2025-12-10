@@ -34,15 +34,13 @@ export function removePlayer(id) {
     return removed === -1 ? null : removed
 }
 
-// TODO 3: Write a function to update player data
-// The function should:
-// - Accept id and newData as parameters
-// - Find the player by id
 // - Update the player's properties with newData
 // - Return the updated player
 export function updatePlayer(id, newData) {
+    const find = findPlayerById(id)
+    Object.assign(find, newData)
+    return find
 }
-
 // TODO 4: Write a function to find player by name (partial match)
 // The function should:
 // - Accept name as parameter (string)
