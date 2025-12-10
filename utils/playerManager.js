@@ -10,7 +10,7 @@ export const findPlayerById = (id) => {
 };
 
 
-export function createPlayer(name, position, age, nationality){
+export function createPlayer(name, position, age, nationality) {
     return {
         id: players.length + 1,
         name: name,
@@ -23,18 +23,15 @@ export function createPlayer(name, position, age, nationality){
     }
 }
 
-export function addPlayer(playerData, player) {
-    playerData.push(player)
+export function addPlayer(playersData, player) {
+    playersData.push(player)
 }
 
-// TODO 2: Write a function to remove a player by id
-// The function should:
-// - Accept id as parameter
-// - Find the player index in the array
-// - Remove the player from the array
-// - Return the removed player (or null if not found)
 export function removePlayer(id) {
-
+    const removed = findPlayerById(id)
+    const index = players.findIndex(playerId => playerId.id === id)
+    players.splice(removed, 1)
+    return removed === -1 ? null : removed
 }
 
 // TODO 3: Write a function to update player data
